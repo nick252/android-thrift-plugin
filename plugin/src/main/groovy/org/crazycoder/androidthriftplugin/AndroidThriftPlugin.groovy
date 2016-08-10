@@ -19,7 +19,7 @@ class AndroidThriftPlugin implements Plugin<Project> {
             FileTree tree = project.fileTree(pluginModel.thriftFilesFolder).include(pluginModel.includeThriftFiles)
             tree.each { File file ->
                 println file.path
-                "${pluginModel.thriftPath} ${pluginModel.params} -o ${dir.path} --gen java:android ${file.path}".execute()
+                "${pluginModel.thriftPath} ${pluginModel.params} -o ${dir.path} --gen java:android -debug ${file.path}".execute()
             }
         }
     }
